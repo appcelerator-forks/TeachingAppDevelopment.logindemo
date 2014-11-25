@@ -1,0 +1,45 @@
+"Window": {
+	layout: "vertical",
+	backgroundColor: "#fff",
+	orientationModes: [
+		Titanium.UI.LANDSCAPE_LEFT,
+		Titanium.UI.LANDSCAPE_RIGHT,
+		Titanium.UI.PORTRAIT
+	]
+},
+"View": {
+	top: "5%",
+	layout: "vertical"	
+},
+"Label": {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+	color: "#000",
+	font: {
+		fontSize: 14,
+		fontFamily: 'Helvetica Neue'
+	},
+	textAlign: 'center'
+},
+
+// Cross platform style fixes
+"Label[platform=android]": {
+    color: "#000" // Android default to black
+},
+"Window[platform=android]": {
+    modal: false // android windows all heavyweight
+},
+"TextField": {
+    borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED, // default style
+    borderColor : "black",
+    width: "60%"
+},
+"TextField[platform=android]": {
+    borderRadius: 6, // common default style
+    borderColor : "black",
+    borderWidth : 1,
+    color: "#000"
+},
+"ImageView[platform=ios]": {
+    preventDefaultImage: true // never image while loading remote
+}

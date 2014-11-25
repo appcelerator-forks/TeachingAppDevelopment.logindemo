@@ -1,0 +1,8 @@
+<Alloy>
+	<Window>
+		<View>
+			<Label id="lblLoginStatus" />
+			<Button id="btnToggleLogin" onClick="doClickToggleLogin" />	
+		</View>
+	</Window>
+</Alloy>

@@ -2,6 +2,39 @@ var args = arguments[0] || {};
 // use require to access the cloud module
 var Cloud = require("ti.cloud");
 
+// Facebook setup
+
+var facebook = require("facebook");
+facebook.appid = [YOUR FB APP ID HERE];
+facebook.permissions = ["public_profile", "email", "user_friends"];
+
+if(facebook.loggedIn){
+	$.btnFacebook.title = "Log out of facebook";		
+}else{
+	$.btnFacebook.title = "Login with Facebook";
+}
+
+function doClickFaceBookLogin(e){
+	if(facebook.loggedIn){
+		facebook.logout();
+	}else{
+		facebook.authorize();	
+	}
+}
+
+facebook.addEventListener('login', function(e) {
+    if (e.success) {
+    	Ti.API.info("login event");
+        Ti.App.Properties.setObject("fbuser", e.data);
+        $.btnFacebook.title = "Log out of facebook";		
+    }
+});
+facebook.addEventListener('logout', function(e) {
+   	Ti.API.info("logout event");
+    Ti.App.Properties.removeProperty("fbuser");
+    $.btnFacebook.title = "Login with Facebook";
+});
+
 function doClickLogin(e){
 	Ti.API.info("Login clicked");
 	// Log the user in

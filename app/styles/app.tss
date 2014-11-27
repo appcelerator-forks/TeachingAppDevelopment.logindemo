@@ -9,7 +9,8 @@
 },
 "View": {
 	top: "5%",
-	layout: "vertical"	
+	layout: "vertical",
+	height: Titanium.UI.SIZE	
 },
 "Label": {
 	width: Ti.UI.SIZE,

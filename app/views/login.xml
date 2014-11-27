@@ -1,24 +1,29 @@
 <Alloy>
-	<Window layout="composite" id="loginwindow" onClose="doCloseWindow">
-		<View id="vLogin">
-			<TextField id="tfUsername" hintText="Username" />
-			<TextField id="tfPassword" hintText="Password" passwordMask="true" />
-			<Button onClick="doClickLogin">Login</Button>
-			<View>
-				<Button onClick="doShowCreate">Create new User</Button>	
+	<Window id="loginwindow" onClose="doCloseWindow">
+		<View layout="composite">
+			<View id="vLogin">
+				<TextField id="tfUsername" hintText="Username" />
+				<TextField id="tfPassword" hintText="Password" passwordMask="true" />
+				<Button onClick="doClickLogin">Login</Button>
+				<View>
+					<Button onClick="doShowCreate">Create new User</Button>	
+				</View>
+			</View>
+			<View id="vCreate" visible="false">
+				<TextField id="tfNewUsername" hintText="Username" />
+				<TextField id="tfNewEmail" hintText="Email" />
+				<TextField id="tfNewPassword1" passwordMask="true" hintText="Password" />
+				<TextField id="tfNewPassword2" passwordMask="true" hintText="Repeat password" />
+				<TextField id="tfNewFirstname" hintText="Firstname" />
+				<TextField id="tfNewLastname" hintText="Lastname" />
+				<View width="50%" layout="horizontal">
+					<Button onClick="doClickCancelCreate">Cancel</Button>
+					<Button onClick="doClickCreate" left="5%">Create User</Button>
+				</View>
 			</View>
 		</View>
-		<View id="vCreate" visible="false">
-			<TextField id="tfNewUsername" hintText="Username" />
-			<TextField id="tfNewEmail" hintText="Email" />
-			<TextField id="tfNewPassword1" passwordMask="true" hintText="Password" />
-			<TextField id="tfNewPassword2" passwordMask="true" hintText="Repeat password" />
-			<TextField id="tfNewFirstname" hintText="Firstname" />
-			<TextField id="tfNewLastname" hintText="Lastname" />
-			<View width="50%" layout="horizontal">
-				<Button onClick="doClickCancelCreate">Cancel</Button>
-				<Button onClick="doClickCreate" left="5%">Create User</Button>
-			</View>
+		<View id="vFacebook">
+			<Button id="btnFacebook" onClick="doClickFaceBookLogin">Login with Facebook</Button>	
 		</View>
 	</Window>
 </Alloy>

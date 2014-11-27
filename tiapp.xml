@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ti:app xmlns:ti="http://ti.appcelerator.org">
-	<property name="acs-api-key-production" type="string">[KEY REMOVED FOR SECURITY REASONS, see README]</property>
-    <property name="acs-api-key-development" type="string">[KEY REMOVED FOR SECURITY REASONS, see README]</property>
+	<property name="acs-api-key-production" type="string">[YOUR ACS PRODUCTION KEY HERE]</property>
+    <property name="acs-api-key-development" type="string">[YOUR ACS DEVELOPMENT KEY HERE]</property>
     <id>com.nebulators.logindemo</id>
     <name>logindemo</name>
     <version>1.0</version>
@@ -15,6 +15,7 @@
     <analytics>true</analytics>
     <guid>c1996c91-080c-46e5-8a2c-ac224bf0b9b3</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
+    <property name="ti.facebook.appid">[YOUR FB APP ID HERE]</property>
     <ios>
         <plist>
             <dict>
@@ -51,6 +52,8 @@
     </mobileweb>
     <modules>
         <module platform="commonjs">ti.cloud</module>
+        <module platform="android">facebook</module>
+    	<module platform="iphone">facebook</module>
     </modules>
     <deployment-targets>
         <target device="android">true</target>
